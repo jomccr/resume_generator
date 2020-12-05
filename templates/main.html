@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<style>
+.printme {
+        display: none;
+}
+
+@media print {
+        @page {
+                size: A4;
+                margin:0;
+        }
+
+        html, body {
+                font-size: 14pt;
+                background: #FFF;
+                overflow: visible;
+        }
+
+        .navbar {
+                display: block;
+                border-width: 0 !important;
+        }
+
+        .navbar-toggle {
+                display: none;
+        }
+
+        .no-printme {
+                display: none;
+        }
+
+        .printme {
+                display: block;
+
+        }
+}
+</style>
+<title>Resume</title>
+</head>
+
+<body>
+<div id="printme" class="container" style="max-width: 8.5in">
+        <nav class="navbar" style="padding-left: 0;">
+            <p class="display-4">{{ content['name'] }}</p><br>
+                <p>{{ content['summary'] }}</p>
+        </nav>
+        <div id="projects">
+                <h4>Projects</h4><hr>
+                {% for project in content['projects'] %}
+                <em>{{ project['name'] }}</em> - ({{ project['stack'] }})<br>
+                <ul>
+                        {% for desc in project['description'] %}
+                        <li>{{ desc['item'] }}</li>
+                        {% endfor %}
+                </ul>
+
+                {% endfor %}
+        </div>
+
+        <div id="education">
+                <h4>Education</h4><hr>
+                {% for school in content['education'] %}
+                <em>{{ school['name'] }} - {{ school['date'] }}</em><br>
+                <ul>
+                        <li>{{ school['degree'] }}</li>
+                        {% if 'minor' in school %}
+                        <li>Minor: {{ school['minor'] }}</li>
+                        {% endif %}
+                </ul>
+                {% endfor %}
+        </div>
+
+        <div id="skills">
+        <h4>Skills</h4><hr>
+        <ul>
+        {% for skill in content['skills'] %}
+            {% for name, desc in skill.items() %}
+                <li>{{ desc }}</li>
+            {% endfor %}
+        {% endfor %}
+        </ul>
+        </div>
+
+        <footer class="footer">
+        <div class="container">
+                <span class="text-muted">
+                        Call me at <b>{{ content['phone'] }}</b> or send an email to <b>{{ content['email'] }}</b><br>
+                        This resume was generated with Flask - <b><a href="{{ content['github'] }}" style="color: inherit">see how it was done on my Github</a></b>.
+                </span>
+        </div>
+        </footer>
+
+</div>
+</body>
+
+</html>

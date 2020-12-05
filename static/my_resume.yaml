@@ -1,0 +1,50 @@
+name: John McCrary
+current_position: Production Support Engineer
+
+github: https://github.com/jomccr
+linkedin: https://www.linkedin.com/jomccr
+email: johnmccrarywork@gmail.com
+phone: (501) 472-2906
+
+summary: I am a a software engineer with two years of experience looking for a challenging position using Python with a focus on devops and backend systems.
+
+skills:
+  - Web: Building REST APIs using Flask, PHP, JavaScript, HTML/CSS
+    Databases: In-depth knowledge of Oracle SQL, some PostgreSQL PGSQL programming
+    Other: Python, perl, shell scripting, Linux command line expert
+
+experience:
+  - position: Delivery Analyst
+    date: Jan 2019 - Present
+    company: Acxiom LLC
+    location: Conway, AR
+    description: Building better reporting for complex data pipelines and resolving issues when production bugs come up.
+
+education:
+  - name: University of Central Arkansas
+    degree: B.S. Applied Mathematics
+    minor: Computer Science
+    date: Aug 2017 - May 2019
+  - name: University of Arkansas, Beebe
+    degree: As. Liberal Arts & Sciences
+    date: Aug 2015 - May 2017
+
+projects:
+  - name: Data Pipeline to Facebook
+    stack: Perl, Shell, SQL
+    description:
+      - item: Designed and built a data pipeline to automate monthly Facebook advertising audience refresh
+
+  - name: Production Monitoring API
+    stack: Python, Flask, SQL
+    description:
+      - item: Led an effort to redesign the backend of our legacy web-based monitoring tools
+      - item: Built a RESTful web service that you could query for long running, failed, and recently completed processes
+      - item: Designed a minimal PoC frontend with Bootstrap and Vue.js before leaving the project to assist another team
+
+  - name: Password Reset Tool
+    stack: HTML/CSS, PHP, Bash
+    description:
+      - item: Created a web frontend to streamline manual password resets
+      - item: Extended an existing command line tool used across my team while maintaining backward compatibility
+
