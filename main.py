@@ -15,7 +15,7 @@ app.template_folder = './templates/'
 def parse_yaml(filename='./static/my_resume.yaml'):
     with open(filename) as file:
         cv = yaml.full_load(file)
-        cv['cachebuster'] = lambda: md5(str(time())).hexdigest()
+        cv['cachebuster'] = lambda: md5(str(time()).encode('utf-8')).hexdigest()
     return cv
 
 
@@ -25,4 +25,4 @@ def main():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

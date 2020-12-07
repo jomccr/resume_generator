@@ -15,7 +15,7 @@
 @media print {
         @page {
                 size: A4;
-                margin:0;
+                margin: 1cm;
         }
 
         html, body {
@@ -92,14 +92,13 @@
         <footer class="footer">
         <div class="container">
                 <span class="text-muted">
-                        Call me at <b>{{ content['phone'] }}</b> or send an email to <b>{{ content['email'] }}</b><br>
-                        This resume was generated with Flask - <b><a href="{{ content['github'] }}" style="color: inherit">see how it was done on my Github</a></b>.
+                        Call me at <b>{{ content['phone'] }}</b> or send me an email at <b>{{ content['email'] }}</b><br>
+                        This resume was generated with Flask - {{ content['github'] }}/resume_generator
                 </span>
         </div>
         </footer>
-
+        <p id="no-printme" style="opacity: 0">{{ content['cachebuster']() }}</p>
 </div>
-<p style="opacity: 0">{{ content['cachebuster'] }}</p>
 </body>
 
 </html>
