@@ -15,4 +15,8 @@ docker-compose up
 
 The docker image is using `python:3.7-alpine` so the entire container should be less than 100MB.
 
+## Example Output
+
+![Example Resume](./static/example_resume.png)
+
 
