@@ -1,12 +1,13 @@
-FROM ubuntu:focal
-RUN apt-get update -y
-RUN apt-get install -y python3-pip git
+FROM python:3.7-alpine
 
 COPY . /app
 WORKDIR /app
 
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
-ENTRYPOINT ["python3"]
-CMD ["main.py"]
+EXPOSE "5000:5000"
+
+ENV FLASK_APP="main.py"
+
+CMD ["flask", "run", "--host", "0.0.0.0", "-p", "5000"]
 

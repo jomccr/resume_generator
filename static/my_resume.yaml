@@ -36,7 +36,7 @@ projects:
       - item: Designed and built a data pipeline to automate monthly Facebook advertising audience refresh
 
   - name: Production Monitoring API
-    stack: Python, Flask, SQL
+    stack: Python (Flask), SQL
     description:
       - item: Led an effort to redesign the backend of our legacy web-based monitoring tools
       - item: Built a RESTful web service that you could query for long running, failed, and recently completed processes
@@ -47,4 +47,11 @@ projects:
     description:
       - item: Created a web frontend to streamline manual password resets
       - item: Extended an existing command line tool used across my team while maintaining backward compatibility
+
+  - name: Resume Builder
+    stack: Python (Flask), HTML/CSS, Docker
+    description:
+      - item: Parses YAML file containing resume data and builds a webpage using Flask HTML template engine
+      - item: Frontend built with Bootstrap and printable document area created with custom CSS
+      - item: Containerized with Docker and can be built and installed with docker-compose
 
